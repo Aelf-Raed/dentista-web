@@ -16,6 +16,7 @@
         "postcss": "^8.1.14"
     },
     "dependencies": {
+        "@fortawesome/fontawesome-free": "^5.15.3",
         "aos": "^3.0.0-beta.6",
         "mdb-ui-kit": "^3.8.0"
     }

@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+/*Agregamos ruta del controlador*/
+use App\Http\Controllers\PageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +15,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [PageController::class,'inicio'])->name('inicio');
+
+Route::get('nosotros', [PageController::class,'nosotros'])->name('nosotros');
+
+Route::get('servicios', [PageController::class,'servicios'])->name('servicios');
+
+Route::get('contacto', [PageController::class,'contacto'])->name('contacto');
