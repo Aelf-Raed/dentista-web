@@ -58,6 +58,13 @@
     <footer>
         <!-- Contenido footer-->
         <div class="text-center p-3 bg-light">
+            <div class="">
+              <a href="#" class="text-muted mx-1"><i class="fab fa-facebook"></i></a>
+              <a href="#" class="text-muted mx-1"><i class="fab fa-whatsapp"></i></a>
+              <a href="#" class="text-muted mx-1"><i class="fab fa-telegram-plane"></i></a>
+              <a href="#" class="text-muted mx-1"><i class="fab fa-instagram"></i></a>
+              <a href="#" class="text-muted mx-1"><i class="fab fa-twitter"></i></a>
+            </div>
             <small>© 2020 Copyright: Todos los derechos reservados.</small>
         </div>
         <!-- Fin Contenido footer-->
