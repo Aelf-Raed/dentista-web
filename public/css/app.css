@@ -78,15 +78,14 @@
   background: linear-gradient(to right, rgba(5, 119, 233, 0.7), rgba(53, 255, 145, 0.7) 100%);
 }
 
-.mask{
-  /* background: linear-gradient(to right, rgba(106, 17, 203, 0.7), rgba(37, 117, 252, 0.7)); */
-  /* background: linear-gradient(to right, rgba(39, 231, 252, 0.5), rgba(78, 248, 163, 0.5) 100%); */
-  /* #1DB4C1 */
-}
-
 /***Banner/nosotros-servicios-contacto***/
 #intro2{
   height: 36vh;
+}
+
+/*titulos*/
+.mytitle{
+  color: #1DB4C1;
 }
 
 /*Nosotros contenido*/
@@ -99,8 +98,17 @@
   text-align: justify;
 }
 
-/*contacto contenido*/
+/*Servicios contenido*/
+#services a:hover{
+  text-decoration: underline;
+}
 
+#services a{
+  background-color: #1DB4C1;
+  color:white;
+}
+
+/*contacto contenido*/
 #contact p{
   line-height: 10px;
 }

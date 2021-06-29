@@ -15,7 +15,7 @@ use App\Http\Controllers\PageController;
 |
 */
 
-Route::get('/', [PageController::class,'inicio'])->name('inicio');
+Route::get('inicio', [PageController::class,'inicio'])->name('inicio');
 
 Route::get('nosotros', [PageController::class,'nosotros'])->name('nosotros');
 

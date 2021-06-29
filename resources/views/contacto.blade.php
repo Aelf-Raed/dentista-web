@@ -20,13 +20,13 @@
         <div class="row text-center">
             <div class="col"></div>
             <div class="col-md-5 mb-5 border-end">
-                <h4 class="fw-bold mb-5"><i class="fas fa-map-marker-alt"></i> Dirección</h4>
+                <h4 class="fw-bold mb-5 mytitle"><i class="fas fa-map-marker-alt"></i> Dirección</h4>
                 <p class="text-muted">Blvd. Aeropuerto 104, Cerrito de Jerez Nte.</p>
                 <p class="text-muted">37530 León, Gto.</p>
                 <p class="text-muted">info@ejemplo.com \\ 477 XXX XX XX</p>
             </div>
             <div class="col-md-5 mb-5 border-start">
-                <h4 class="fw-bold mb-5"><i class="far fa-clock"></i> Horarios</h4>
+                <h4 class="fw-bold mb-5 mytitle"><i class="far fa-clock"></i> Horarios</h4>
                 <p class="text-muted">Lunes a Viernes 09:00AM – 17:00PM</p>
                 <p class="text-muted">Sábados 09:00AM – 14:00PM</p>
             </div>

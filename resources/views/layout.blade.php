@@ -31,7 +31,7 @@
                 <div class="collapse navbar-collapse" id="navbarExample01">
                     <ul class="navbar-nav ms-auto font-monospace fw-bold">
                         <li class="nav-item active">
-                            <a class="nav-link mx-2 active" href="{{ route('inicio') }}">Inicio</a>
+                            <a class="nav-link mx-2" href="{{ route('inicio') }}">Inicio</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link mx-2" href="{{ route('nosotros') }}">Nosotros</a>
@@ -65,7 +65,7 @@
               <a href="#" class="text-muted mx-1"><i class="fab fa-instagram"></i></a>
               <a href="#" class="text-muted mx-1"><i class="fab fa-twitter"></i></a>
             </div>
-            <small>© 2020 Copyright: Todos los derechos reservados.</small>
+            <small>© 2021 Copyright: Todos los derechos reservados.</small>
         </div>
         <!-- Fin Contenido footer-->
     </footer>
