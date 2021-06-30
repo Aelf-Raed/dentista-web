@@ -6,8 +6,8 @@
     <div class="mask">
         <div class="container d-flex align-items-center justify-content-center text-center h-100">
             <div class="text-light lead font-monospace mt-5 pt-5">
-                <h1 class="mb-3 display-5 pt-3 fw-bold">Nuestros Servicios</h1>
-                <h5 class="mb-4 fw-bold"><em>¡Contamos con tecnología de punta!</em></h5>
+                <h1 class="mb-3 display-5 pt-3 fw-bold" data-aos="fade-right">Nuestros Servicios</h1>
+                <h5 class="mb-4 fw-bold" data-aos="fade-left"><em>¡Contamos con tecnología de punta!</em></h5>
                 <br>
             </div>
         </div>
@@ -17,7 +17,7 @@
 {{-- contenido --}}
 <div class="container my-5">
     <section id="services">
-        <div class="row justify-content-center my-3 gx-5">
+        <div class="row justify-content-center my-3 gx-5" data-aos="zoom-in-up">
             <div class="col-12 col-lg-3">
                 <div class="card text-center shadow-2-strong my-3">
                     <div class="card-header">
@@ -61,7 +61,7 @@
                 </div>
             </div>
         </div>
-        <div class="row justify-content-center my-3 gx-5">
+        <div class="row justify-content-center my-3 gx-5" data-aos="zoom-in-up">
             <div class="col-12 col-lg-3">
                 <div class="card text-center shadow-2-strong my-3">
                     <div class="card-header">

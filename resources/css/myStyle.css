@@ -76,3 +76,13 @@
   width: 385px;
   }
 }
+
+/*Loader*/
+.loader{
+  height: 100vh;
+  background-color: #FBFBFB;
+}
+
+.spinner-grow{
+  color: #1DB4C1;
+}

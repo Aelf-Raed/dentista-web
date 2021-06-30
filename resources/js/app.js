@@ -3,6 +3,6 @@ import AOS from 'aos';
 import './myJs.js';
 
 /*Inicializador AOS*/
-// AOS.init({
-//     duration: 1000,
-// });
+AOS.init({
+ duration: 2000,
+});

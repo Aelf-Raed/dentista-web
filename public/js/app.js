@@ -30,9 +30,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /*Inicializador AOS*/
-// AOS.init({
-//     duration: 1000,
-// });
+
+aos__WEBPACK_IMPORTED_MODULE_1___default().init({
+  duration: 2000
+});
 
 /***/ }),
 
@@ -42,7 +43,17 @@ __webpack_require__.r(__webpack_exports__);
   \******************************/
 /***/ (() => {
 
+/*script de carga*/
+window.addEventListener('load', function () {
+  carga(); // setTimeout(carga,4000);
+
+  function carga() {
+    document.getElementById('loader').classList.add('visually-hidden');
+    document.getElementById('contenido').classList.remove('visually-hidden');
+  }
+});
 /*Script para agregar y eliminar la clase active en el nav*/
+
 var local = location.href;
 var navbar = document.querySelector('.navbar-nav').querySelectorAll('a');
 var navbarLength = navbar.length;
