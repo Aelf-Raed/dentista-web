@@ -5,7 +5,7 @@
 @section('contenido')
 <!-- Background image -->
 <div id="intro" class="bg-image shadow-2-strong" style="background-image: url({{ asset('img/intro1.jpg') }});">
-    <div class="mask">
+    <div class="mask mascara">
         <div class="container d-flex align-items-center justify-content-center text-center h-100">
             <!-- Contenido principal -->
             <div class="text-light lead" data-aos="zoom-in">

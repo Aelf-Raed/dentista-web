@@ -63,6 +63,7 @@ for (var i = 0; i < navbar.length; i++) {
     navbar[i].classList.add('active');
   }
 }
+/*Script para logo en pantallas menores 768px*/
 
 /***/ }),
 

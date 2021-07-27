@@ -1,18 +1,18 @@
 /*Barra de Nav*/
-.navbar-brand{
+.color-brand, .adm-login{
   color: #0091EA !important;
 }
 
-.active{
+#navbarExample01 li .active{
   color: #00BFA5 !important;
 }
 
-.ms-auto a:hover{
+#navbarExample01 a:hover{
   color: #00BFA5 !important;
 }
 
 /*Inicio contenido*/
-#intro {
+#intro{
   height: 100vh;
 }
 
@@ -20,7 +20,7 @@
   text-decoration: underline;
 }
 
-.mask{
+.mascara{
   background: linear-gradient(to right, rgba(5, 119, 233, 0.7), rgba(53, 255, 145, 0.7) 100%);
 }
 
@@ -30,8 +30,8 @@
 }
 
 /*titulos*/
-.mytitle{
-  color: #1DB4C1;
+.title-color{
+  color: #1DB4C1 !important;
 }
 
 /*Nosotros contenido*/
@@ -59,6 +59,7 @@
   line-height: 10px;
 }
 
+/*mapa*/
 @media (max-width:991px){
   iframe{
   width: 600px;
@@ -78,11 +79,90 @@
 }
 
 /*Loader*/
-.loader{
+#loader{
   height: 100vh;
   background-color: #FBFBFB;
 }
 
 .spinner-grow{
-  color: #1DB4C1;
+  color: #1DB4C1 !important;
+}
+
+/***Admin Sesion***/
+.mascara2{
+  background: linear-gradient(45deg, rgba(29, 236, 197, 0.8), rgba(91, 14, 214, 0.8) 100%);
+}
+
+.btn-login:hover{
+  text-decoration: underline;
+}
+
+#login .active {
+  color: #0091EA !important;
+}
+
+/**Admin SideNav**/
+#sidebar-container{
+  min-height: 100vh;
+}
+
+#sidebar-container .logo{
+  padding: .875rem 1.25rem;
+}
+
+#sidebar-container .menu{
+  width: 18rem;
+}
+
+/*Admin Dashboard*/
+.mascara3{
+  background: linear-gradient(45deg, rgba(91, 14, 214, 0.8), rgba(29, 236, 197, 0.8) 100%);
+}
+
+.select{
+  color: #6200EA !important;
+}
+
+.menu a:hover{
+  color: #6200EA !important;
+}
+
+.dropdown-menu a:hover{
+  color: #00BFA5 !important;
+}
+
+/* .dropdown-menu>li:last-child>a:hover{
+  color: #D50000 !important;
+} */
+
+.dropdown-menu li form a:hover{
+  color: #D50000 !important;
+}
+
+.bg-color-adm{
+  /* background-color: #E8EAF6; */
+  /* background-color: #E0F2F1; */
+  /* background-color: #F5F5F5; */
+  background-color: #EEEEEE;
+  /* background-color: #E0E0E0; */
+}
+/*en body overflow:hidden; y en contenedor overflow-y:auto;*/
+
+@media(max-width:768px){
+  #sidebar-container{
+    display: none;
+  }
+}
+
+@media(min-width:768px){
+  .logo{
+    display: none;
+  }
+  .dropdown-menu li:not(:last-child){
+    display: none;
+  }
+}
+
+#contenedor{
+  min-height: 88vh;
 }

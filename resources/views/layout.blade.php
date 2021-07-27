@@ -27,7 +27,7 @@
             <nav class="navbar navbar-expand-md navbar-light bg-light shadow">
                 <div class="container">
                     <!-- Navbar brand -->
-                    <a class="navbar-brand nav-link fw-bold" href="{{ route('inicio') }}">
+                    <a class="navbar-brand nav-link fw-bold color-brand" href="{{ route('inicio') }}">
                         <i class="fas fa-tooth"></i>&nbsp;Dentista WEB
                     </a>
                     <!--Fin Navbar brand -->
@@ -36,16 +36,16 @@
                     </button>
                     <div class="collapse navbar-collapse" id="navbarExample01">
                         <ul class="navbar-nav ms-auto font-monospace fw-bold">
-                            <li class="nav-item active">
+                            <li class="nav-item active border-end">
                                 <a class="nav-link mx-2" href="{{ route('inicio') }}">Inicio</a>
                             </li>
-                            <li class="nav-item">
+                            <li class="nav-item border-end">
                                 <a class="nav-link mx-2" href="{{ route('nosotros') }}">Nosotros</a>
                             </li>
-                            <li class="nav-item">
+                            <li class="nav-item border-end">
                                 <a class="nav-link mx-2" href="{{ route('servicios') }}">Servicios</a>
                             </li>
-                            <li class="nav-item">
+                            <li class="nav-item border-end">
                                 <a class="nav-link mx-2" href="{{ route('contacto') }}">Contacto</a>
                             </li>
                         </ul>
