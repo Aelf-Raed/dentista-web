@@ -155,20 +155,16 @@
   color: #0091EA !important;
 }
 
-/**Admin SideNav**/
+/***Admin Dashboard***/
+/*Admin layout SideNav*/
 #sidebar-container{
   min-height: 100vh;
-}
-
-#sidebar-container .logo{
-  padding: .875rem 1.25rem;
 }
 
 #sidebar-container .menu{
   width: 18rem;
 }
 
-/*Admin Dashboard*/
 .mascara3{
   background: linear-gradient(45deg, rgba(91, 14, 214, 0.8), rgba(29, 236, 197, 0.8) 100%);
 }
@@ -181,18 +177,31 @@
   color: #6200EA !important;
 }
 
-.dropdown-menu a:hover{
+@media(max-width:768px){
+  #sidebar-container{
+    display: none;
+  }
+}
+
+/*Admin layout Barra Superior*/
+.desplegar a:hover{
   color: #00BFA5 !important;
 }
 
-/* .dropdown-menu>li:last-child>a:hover{
-  color: #D50000 !important;
-} */
-
-.dropdown-menu li form a:hover{
+.desplegar li form a:hover{
   color: #D50000 !important;
 }
 
+@media(min-width:768px){
+  .logo{
+    display: none;
+  }
+  .desplegar li:not(:last-child){
+    display: none;
+  }
+}
+
+/*Admin layout Fondo del Contenido Principal*/
 .bg-color-adm{
   /* background-color: #E8EAF6; */
   /* background-color: #E0F2F1; */
@@ -200,26 +209,41 @@
   background-color: #EEEEEE;
   /* background-color: #E0E0E0; */
 }
-/*en body overflow:hidden; y en contenedor overflow-y:auto;*/
-
-@media(max-width:768px){
-  #sidebar-container{
-    display: none;
-  }
-}
-
-@media(min-width:768px){
-  .logo{
-    display: none;
-  }
-  .dropdown-menu li:not(:last-child){
-    display: none;
-  }
-}
 
 #contenedor{
   min-height: 88vh;
 }
+
+/*Admin boton Guardar*/
+.btn-guardar:hover{
+  text-decoration: underline;
+}
+
+/*Seccion Inicio*/
+.fondo{
+  width: 50%;
+}
+
+.perfil{
+  height: 20%;
+  width: 20%;
+}
+
+@media(max-width:768px){
+  .perfil{
+    height: 40%;
+    width: 40%;
+  }
+}
+
+/*Seccion Servicios*/
+.btn-add:hover{
+  text-decoration: underline;
+}
+
+/* span .page-link{
+ background: red !important;
+} */
 
 
 

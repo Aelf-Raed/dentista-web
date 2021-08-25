@@ -21,7 +21,7 @@ class LoginController extends Controller
     $credentials = $request->validated();
 
     // dump($credentials);
-    $remember = request()->filled('remember');
+    $remember = request()->filled('remember'); //on o null a true o false
     // dd($remember, $credentials);
 
     if (Auth::attempt($credentials, $remember)) {

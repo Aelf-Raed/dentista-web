@@ -24,30 +24,36 @@
 
     <div id="contenido" class="visually-hidden bg-color-adm">
         <div class="d-flex">
-          <!-- SideNav -->
+            <!-- SideNav -->
             <div id="sidebar-container" class="bg-light shadow-2-strong">
                 <div class="mascara3 p-3 shadow-2-strong">
-                  <h3>
-                      <a class="fw-bold text-light font-monospace" href="{{ route('inicio') }}"><i class="fas fa-tooth"></i> Dentista Web</a>
-                  </h3>
+                    <h3>
+                        <a class="fw-bold text-light font-monospace" href="{{ route('inicio') }}"><i class="fas fa-tooth"></i> Dentista Web</a>
+                    </h3>
                 </div>
                 <div class="menu">
-                    <a href="#" class="d-block p-3 ml-2 border-bottom fw-bold select"><i class="fas fa-house-user"></i> Dashboard</a>
-                    <a href="#" class="d-block p-3 ml-2 text-muted border-bottom fw-bold"><i class="fas fa-window-restore"></i> Editar Información</a>
-                    <a href="#" class="d-block p-3 ml-2 text-muted border-bottom fw-bold"><i class="fas fa-concierge-bell"></i> Editar Servicios</a>
+                    <a href="{{ route('dashboard') }}" class="d-block p-3 ml-2 text-muted border-bottom fw-bold"><i class="fas fa-house-user"></i> Dashboard</a>
+
+                    <a href="{{ route('editar-inicio') }}" class="d-block p-3 ml-2 text-muted border-bottom fw-bold"><i class="fas fa-image"></i> Editar Inicio</a>
+
+                    <a href="{{ route('editar-nosotros') }}" class="d-block p-3 ml-2 text-muted border-bottom fw-bold"><i class="fas fa-users"></i> Editar Nosotros</a>
+
+                    <a href="{{ route('editar-servicios') }}" class="d-block p-3 ml-2 text-muted border-bottom fw-bold select"><i class="fas fa-concierge-bell"></i> Editar Servicios</a>
+
+                    <a href="{{ route('editar-contacto') }}" class="d-block p-3 ml-2 text-muted border-bottom fw-bold"><i class="fas fa-address-book"></i> Editar Contácto</a>
+
                     <a href="#" class="d-block p-3 ml-2 text-muted border-bottom fw-bold"><i class="fas fa-users-cog"></i> Gestión de Usuarios</a>
-                    <a href="#" class="d-block p-3 ml-2 text-muted border-bottom fw-bold"><i class="fas fa-calendar-week"></i> Agenda</a>
                 </div>
             </div>
-          <!-- Fin de SideNav -->
+            <!-- Fin de SideNav -->
             <div class="w-100">
                 <!-- Barra Superior -->
                 <nav class="navbar navbar-expand-md navbar-light bg-light shadow-1-strong">
                     <div class="container-fluid">
                         <div class="logo mascara3 p-2 shadow-2-strong">
-                          <h3>
-                              <a class="fw-bold text-light font-monospace" href="{{ route('inicio') }}"><i class="fas fa-tooth"></i> Dentista Web</a>
-                          </h3>
+                            <h3>
+                                <a class="fw-bold text-light font-monospace" href="{{ route('inicio') }}"><i class="fas fa-tooth"></i> Dentista Web</a>
+                            </h3>
                         </div>
                         <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
                             <i class="fas fa-bars"></i>
@@ -59,28 +65,33 @@
                                     <a class="nav-link dropdown-toggle title-color" href="#" id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
                                         <i class="fas fa-user-shield"></i> Usuario Administrador
                                     </a>
-                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <ul class="dropdown-menu desplegar" aria-labelledby="navbarDropdownMenuLink">
                                         <li>
-                                            <a class="dropdown-item text-muted" href="#"><i class="fas fa-house-user"></i> Dashboard</a>
+                                            <a class="dropdown-item text-muted" href="{{ route('dashboard') }}"><i class="fas fa-house-user"></i> Dashboard</a>
                                         </li>
                                         <li>
-                                            <a class="dropdown-item text-muted" href="#"><i class="fas fa-window-restore"></i> Editar Información</a>
+                                            <a class="dropdown-item text-muted" href="{{ route('editar-inicio') }}"><i class="fas fa-image"></i> Editar Inicio</a>
                                         </li>
                                         <li>
-                                            <a class="dropdown-item text-muted" href="#"><i class="fas fa-concierge-bell"></i> Editar Servicios</a>
+                                            <a class="dropdown-item text-muted" href="{{ route('editar-nosotros') }}"><i class="fas fa-users"></i> Editar Nosotros</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item text-muted" href="{{ route('editar-servicios') }}"><i class="fas fa-concierge-bell"></i> Editar Servicios</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item text-muted" href="{{ route('editar-contacto') }}"><i class="fas fa-address-book"></i> Editar Contácto</a>
                                         </li>
                                         <li>
                                             <a class="dropdown-item text-muted" href="#"><i class="fas fa-users-cog"></i> Gestión de Usuarios</a>
                                         </li>
                                         <li>
-                                            <a class="dropdown-item text-muted" href="#"><i class="fas fa-calendar-week"></i> Agenda</a>
+                                            <hr class="dropdown-divider" />
                                         </li>
-                                        <li><hr class="dropdown-divider" /></li>
                                         <li>
-                                          <form action="/logout" method="post">
-                                            @csrf
-                                            <a class="dropdown-item text-muted" href="#" onclick="this.closest('form').submit()"><i class="fas fa-sign-out-alt"></i> Cerrar Sesion</a>
-                                          </form>
+                                            <form action="/logout" method="post">
+                                                @csrf
+                                                <a class="dropdown-item text-muted" href="#" onclick="this.closest('form').submit()"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</a>
+                                            </form>
                                         </li>
                                     </ul>
                                 </li>
@@ -89,23 +100,39 @@
                     </div>
                 </nav>
                 <!-- Fin de Barra Superior -->
-
+                {{-- Principal --}}
                 <main id="contenedor">
-                  <!-- Traemos el Contenido -->
-                  @yield('contenido-admin')
-                  <!-- Fin contenido -->
+                  <section class="pt-5 ">
+                      <div class="container">
+                        <!-- Captura de mensajes sesion -->
+                        @if (session('mensaje'))
+                          <div class="alert alert-success" role="alert">
+                            <i class="far fa-check-circle"></i> {{ session('mensaje') }}
+                          </div>
+                        @endif
+                        <!-- Fin Captura de mensajes sesion -->
+                        <!-- Captura de error al crear o editar -->
+                        @if ($errors->any())
+                          <div class="alert alert-danger" role="alert">
+                            <i class="far fa-times-circle"></i> Error al Crear o Editar el Servicio.
+                          </div>
+                        @endif
+                        <!-- Fin Captura de error -->
+                    <!-- Traemos el Contenido -->
+                        @yield('contenido-admin')
+                    <!-- Fin contenido -->
+                      </div>
+                  </section>
                 </main>
-
-                  <footer class="text-center mascara3 bg-light p-2 shadow-1-strong">
-                      <!-- Contenido footer-->
-                          <small class="text-light">© 2021 Copyright: Todos los derechos reservados.</small>
-                      <!-- Fin Contenido footer-->
-                  </footer>
-
+                {{-- FIN Principal --}}
+                <!-- Contenido footer-->
+                <footer class="text-center mascara3 bg-light p-2 shadow-1-strong">
+                    <small class="text-light">© 2021 Copyright: Todos los derechos reservados.</small>
+                </footer>
+                <!-- Fin Contenido footer-->
             </div>
         </div>
     </div>
-
     <!-- Custom scripts -->
     <script src="{{ mix('/js/app.js') }}"></script>
 </body>

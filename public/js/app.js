@@ -63,7 +63,34 @@ for (var i = 0; i < navbar.length; i++) {
     navbar[i].classList.add('active');
   }
 }
-/*Script para logo en pantallas menores 768px*/
+/*Script validar precio y decimal*/
+
+
+var input = document.querySelector('.myNum');
+
+input.onkeydown = function (e) {
+  var currentValue = input.value;
+  var regex = /^\d{0,6}(\.\d{1,2})?$/;
+  setTimeout(function () {
+    var newValue = input.value;
+    if (!regex.test(newValue)) input.value = currentValue;
+  }, 0);
+};
+
+var input2 = document.querySelector('.myNum2');
+
+input2.onkeydown = function (e) {
+  var currentValue2 = input2.value;
+  var regex2 = /^\d{0,6}(\.\d{1,2})?$/;
+  setTimeout(function () {
+    var newValue2 = input2.value;
+    if (!regex2.test(newValue2)) input2.value = currentValue2;
+  }, 0);
+}; // var input = document.querySelector('.myNum');
+// input.addEventListener('input',function(){
+//   if (this.value.length > 6)
+//      this.value = this.value.slice(0,6);
+// })
 
 /***/ }),
 

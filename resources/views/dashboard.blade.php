@@ -7,8 +7,8 @@
     <div class="container">
       <div class="card my-2">
         <div class="card-body">
-          <h1 class="fw-bold mb-0">Bienvenido al Dashboard</h1>
-          <p class="lead text-muted">Gestion de la informacion del sitio web</p>
+          <h1 class="fw-bold mb-0 text-secondary"><i class="fas fa-house-user"></i> Bienvenido al Dashboard</h1>
+          <p class="lead text-muted"> *Gestión del sitio web</p>
         </div>
       </div>
     </div>

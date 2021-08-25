@@ -8,6 +8,7 @@ window.addEventListener('load', function(){
     document.getElementById('loader').classList.add('visually-hidden');
     document.getElementById('contenido').classList.remove('visually-hidden');
   }
+
 });
 
 /*Script para agregar y eliminar la clase active en el nav*/
@@ -21,4 +22,43 @@ for (var i = 0; i < navbar.length; i++) {
   }
 }
 
-/*Script para logo en pantallas menores 768px*/
+/*Script validar precio y decimal*/
+ var input = document.querySelector('.myNum');
+
+ input.onkeydown = (e)=>{
+
+     const currentValue = input.value;
+
+     const regex = /^\d{0,6}(\.\d{1,2})?$/;
+
+     setTimeout(function(){
+       const newValue = input.value;
+
+       if(!regex.test(newValue))
+         input.value = currentValue;
+     }, 0);
+
+ }
+
+ var input2 = document.querySelector('.myNum2');
+
+ input2.onkeydown = (e)=>{
+
+     const currentValue2 = input2.value;
+
+     const regex2 = /^\d{0,6}(\.\d{1,2})?$/;
+
+     setTimeout(function(){
+       const newValue2 = input2.value;
+
+       if(!regex2.test(newValue2))
+         input2.value = currentValue2;
+     }, 0);
+
+ }
+
+// var input = document.querySelector('.myNum');
+// input.addEventListener('input',function(){
+//   if (this.value.length > 6)
+//      this.value = this.value.slice(0,6);
+// })
