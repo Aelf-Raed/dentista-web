@@ -38,11 +38,13 @@
 
                     <a href="{{ route('editar-nosotros') }}" class="d-block p-3 ml-2 text-muted border-bottom fw-bold"><i class="fas fa-users"></i> Editar Nosotros</a>
 
-                    <a href="{{ route('editar-servicios') }}" class="d-block p-3 ml-2 text-muted border-bottom fw-bold select"><i class="fas fa-concierge-bell"></i> Editar Servicios</a>
+                    <a href="{{ route('editar-servicios') }}" class="d-block p-3 ml-2 text-muted border-bottom fw-bold"><i class="fas fa-concierge-bell"></i> Editar Servicios</a>
 
                     <a href="{{ route('editar-contacto') }}" class="d-block p-3 ml-2 text-muted border-bottom fw-bold"><i class="fas fa-address-book"></i> Editar Contácto</a>
-
-                    <a href="#" class="d-block p-3 ml-2 text-muted border-bottom fw-bold"><i class="fas fa-users-cog"></i> Gestión de Usuarios</a>
+                     @php $user = Auth::user(); @endphp
+                     @if ($user->tipo == 'Administrador')
+                       <a href="{{ route('gestion-usuarios') }}" class="d-block p-3 ml-2 text-muted border-bottom fw-bold"><i class="fas fa-users-cog"></i> Gestión de Usuarios</a>
+                     @endif
                 </div>
             </div>
             <!-- Fin de SideNav -->
@@ -63,7 +65,7 @@
                                 <!-- Dropdown -->
                                 <li class="nav-item dropdown ms-auto">
                                     <a class="nav-link dropdown-toggle title-color" href="#" id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
-                                        <i class="fas fa-user-shield"></i> Usuario Administrador
+                                        <i class="fas fa-user-shield"></i> Usuario: {{ $user->email }}
                                     </a>
                                     <ul class="dropdown-menu desplegar" aria-labelledby="navbarDropdownMenuLink">
                                         <li>
@@ -81,9 +83,11 @@
                                         <li>
                                             <a class="dropdown-item text-muted" href="{{ route('editar-contacto') }}"><i class="fas fa-address-book"></i> Editar Contácto</a>
                                         </li>
-                                        <li>
-                                            <a class="dropdown-item text-muted" href="#"><i class="fas fa-users-cog"></i> Gestión de Usuarios</a>
-                                        </li>
+                                        @if ($user->tipo == 'Administrador')
+                                          <li>
+                                            <a class="dropdown-item text-muted" href="{{ route('gestion-usuarios') }}"><i class="fas fa-users-cog"></i> Gestión de Usuarios</a>
+                                          </li>
+                                        @endif  
                                         <li>
                                             <hr class="dropdown-divider" />
                                         </li>
@@ -111,13 +115,6 @@
                           </div>
                         @endif
                         <!-- Fin Captura de mensajes sesion -->
-                        <!-- Captura de error al crear o editar -->
-                        @if ($errors->any())
-                          <div class="alert alert-danger" role="alert">
-                            <i class="far fa-times-circle"></i> Error al Crear o Editar el Servicio.
-                          </div>
-                        @endif
-                        <!-- Fin Captura de error -->
                     <!-- Traemos el Contenido -->
                         @yield('contenido-admin')
                     <!-- Fin contenido -->

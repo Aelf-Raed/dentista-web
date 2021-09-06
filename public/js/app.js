@@ -45,52 +45,62 @@ aos__WEBPACK_IMPORTED_MODULE_1___default().init({
 
 /*script de carga*/
 window.addEventListener('load', function () {
-  carga(); // setTimeout(carga,4000);
+  carga();
 
   function carga() {
     document.getElementById('loader').classList.add('visually-hidden');
     document.getElementById('contenido').classList.remove('visually-hidden');
   }
-});
-/*Script para agregar y eliminar la clase active en el nav*/
+  /*Script para agregar y eliminar la clase active en el nav*/
 
-var local = location.href;
-var navbar = document.querySelector('.navbar-nav').querySelectorAll('a');
-var navbarLength = navbar.length;
 
-for (var i = 0; i < navbar.length; i++) {
-  if (navbar[i].href === local) {
-    navbar[i].classList.add('active');
+  var url = location.href;
+  var recorte = url.split("?");
+  var local = recorte[0];
+  var navbar = document.querySelector('.navbar-nav').querySelectorAll('a');
+  var navbarLength = navbar.length;
+
+  for (var i = 0; i < navbar.length; i++) {
+    if (navbar[i].href === local) {
+      navbar[i].classList.add('active');
+    }
   }
-}
-/*Script validar precio y decimal*/
+  /*Scrip navside admin*/
 
 
-var input = document.querySelector('.myNum');
+  var navadmin = document.querySelector('.menu').querySelectorAll('a');
+  var navadminLength = navadmin.length;
 
-input.onkeydown = function (e) {
-  var currentValue = input.value;
-  var regex = /^\d{0,6}(\.\d{1,2})?$/;
-  setTimeout(function () {
-    var newValue = input.value;
-    if (!regex.test(newValue)) input.value = currentValue;
-  }, 0);
-};
+  for (var x = 0; x < navadmin.length; x++) {
+    if (navadmin[x].href === local) {
+      navadmin[x].classList.add('select');
+    }
+  }
+  /*Script validar precio y decimal*/
 
-var input2 = document.querySelector('.myNum2');
 
-input2.onkeydown = function (e) {
-  var currentValue2 = input2.value;
-  var regex2 = /^\d{0,6}(\.\d{1,2})?$/;
-  setTimeout(function () {
-    var newValue2 = input2.value;
-    if (!regex2.test(newValue2)) input2.value = currentValue2;
-  }, 0);
-}; // var input = document.querySelector('.myNum');
-// input.addEventListener('input',function(){
-//   if (this.value.length > 6)
-//      this.value = this.value.slice(0,6);
-// })
+  var input = document.querySelector('.myNum');
+
+  input.onkeydown = function (e) {
+    var currentValue = input.value;
+    var regex = /^\d{0,6}(\.\d{1,2})?$/;
+    setTimeout(function () {
+      var newValue = input.value;
+      if (!regex.test(newValue)) input.value = currentValue;
+    }, 0);
+  };
+
+  var input2 = document.querySelector('.myNum2');
+
+  input2.onkeydown = function (e) {
+    var currentValue2 = input2.value;
+    var regex2 = /^\d{0,6}(\.\d{1,2})?$/;
+    setTimeout(function () {
+      var newValue2 = input2.value;
+      if (!regex2.test(newValue2)) input2.value = currentValue2;
+    }, 0);
+  };
+});
 
 /***/ }),
 

@@ -15,33 +15,33 @@
                       <small class="text-danger">*Este campo es requerido.</small>
                     @enderror
                     <div class="form-outline mb-4">
-                        <input type="text" id="nombre_servicio" name="nombre_servicio" class="form-control" />
+                        <input type="text" id="nombre_servicio" name="nombre_servicio" class="form-control" value="{{ old('nombre_servicio') }}"/>
                         <label class="form-label" for="nombre_servicio">Nombre Servicio:</label>
                     </div>
                     @error('descripcion_servicio')
                       <small class="text-danger">*Este campo es requerido.</small>
                     @enderror
                     <div class="form-outline mb-4">
-                        <textarea class="form-control" id="descripcion_servicio" name="descripcion_servicio" rows="3"></textarea>
+                        <textarea class="form-control" id="descripcion_servicio" name="descripcion_servicio" rows="3">{{ old('descripcion_servicio') }}</textarea>
                         <label class="form-label" for="descripcion_servicio">Descripción Servicio:</label>
                     </div>
                     @error('precio')
                       <small class="text-danger">*Este campo es requerido.</small>
                     @enderror
                     <div class="form-outline mb-4">
-                        <input type="number" id="precio" name="precio" class="form-control myNum" step="0.01"/>
+                        <input type="number" id="precio" name="precio" class="form-control myNum" step="0.01" value="{{ old('precio') }}"/>
                         <label class="form-label" for="precio">Precio Servicio:</label>
                         <div class="form-helper">*Valor min: $100.00, Valor max: $999,999.00.</div>
                     </div>
                     <br>
                     <div class="form-helper fw-bold mb-1">Campos No Requeridos:</div>
                     <div class="form-outline mb-5">
-                        <input type="text" id="oferta" name="oferta" class="form-control" />
+                        <input type="text" id="oferta" name="oferta" class="form-control" value="{{ old('oferta') }}"/>
                         <label class="form-label" for="oferta">Oferta Servicio:</label>
                         <div class="form-helper">Ej: Oferta: 2X1, 2 personas al precio de 1. Oferta: -30% Descuento.</div>
                     </div>
                     <div class="form-outline mb-4">
-                        <input type="text" id="precio_anterior" name="precio_anterior" class="form-control" />
+                        <input type="text" id="precio_anterior" name="precio_anterior" class="form-control" value="{{ old('precio_anterior') }}"/>
                         <label class="form-label" for="precio_anterior">Precio Anterior:</label>
                         <div class="form-helper">Ej: Antes: $500.00. (*Solo si aplicas descuento).</div>
                     </div>

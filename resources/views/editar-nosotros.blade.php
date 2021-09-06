@@ -1,11 +1,16 @@
 @extends('layout-admin')
 
 @section('contenido-admin')
+@php
+use App\Models\User;
+$usuario = User::find($inf->usuario_id);
+@endphp
 {{-- Sección de Nosotros --}}
-<div class="card p-3">
+<div class="card p-3 mb-4">
     <div class="card-body">
         <h2 class="card-title text-secondary"><i class="fas fa-users"></i> Nosotros</h2>
-        <p class="card-text">Información Sobre Nosotros</p>
+        <p class="card-text mb-0">Información Sobre Nosotros:</p>
+        <p><small class="text-muted">Modificado última vez por:  {{ $usuario->name }}, {{ $inf->updated_at }}.</small></p>
         <img src="{{ asset($inf->perfil_url) }}" class="img-thumbnail perfil" />
         <form action="{{ route('informacion') }}" method="post" enctype="multipart/form-data">
             @csrf

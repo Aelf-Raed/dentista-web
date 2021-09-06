@@ -11,6 +11,10 @@ use App\models\Nosotros;
 use App\Http\Requests\NosotrosRequest;
 use App\Models\Servicio;
 use App\Http\Requests\ServicioRequest;
+use App\Models\User;
+use App\Http\Requests\UserRequest;
+use App\Http\Requests\UserUpdateRequest;
+use Auth;
 
 class AdminController extends Controller
 {
@@ -27,6 +31,8 @@ class AdminController extends Controller
       'fondo'=>'required|image'
     ]);
 
+    $usuario = Auth::user()->id;
+
     $file = Inicio::first();
 
     $eliminar = str_replace('storage','public', $file->url);
@@ -37,6 +43,7 @@ class AdminController extends Controller
     $url = Storage::url($fondo);
 
     $file->url = $url;
+    $file->usuario_id = $usuario;
 
     $file->save();
 
@@ -53,7 +60,7 @@ class AdminController extends Controller
   public function actualizar_informacion(NosotrosRequest $request){
 
     $request->validated();
-
+    $usuario = Auth::user()->id;
     $nosotros = Nosotros::first();
 
     if (!empty($request->perfil)) {
@@ -72,6 +79,7 @@ class AdminController extends Controller
     $nosotros->descripcion_1 = $request->description1;
     $nosotros->titulo_2 = $request->title2;
     $nosotros->descripcion_2 = $request->description2;
+    $nosotros->usuario_id = $usuario;
 
     $nosotros->save();
 
@@ -89,6 +97,7 @@ class AdminController extends Controller
   public function actualizar_contacto(ContactoRequest $request){
 
     $request->validated();
+    $usuario = Auth::user()->id;
 
     $contacto = Contacto::first();
     $contacto->direccion = $request->direccion;
@@ -99,6 +108,7 @@ class AdminController extends Controller
     $contacto->telefono = $request->telefono;
     $contacto->hora_semanal = $request->hora_semanal;
     $contacto->fin_semana = $request->fin_semana;
+    $contacto->usuario_id = $usuario;
 
     $contacto->save();
 
@@ -130,12 +140,15 @@ class AdminController extends Controller
   public function editar_servicio(ServicioRequest $request, $id){
     $request->validated();
 
+    $usuario = Auth::user()->id;
+
     $servicio = Servicio::find($id);
     $servicio->nombre_servicio = $request->nombre_servicio;
     $servicio->descripcion_servicio = $request->descripcion_servicio;
     $servicio->precio = $request->precio;
     $servicio->oferta = $request->oferta;
     $servicio->precio_anterior = $request->precio_anterior;
+    $servicio->usuario_id = $usuario;
 
     $servicio->save();
 
@@ -148,5 +161,63 @@ class AdminController extends Controller
     $servicio->delete();
     return back()->with('mensaje','Se ha eliminado el servicio: ' . $eliminado . ', correctamente.');
   }
+
+  /***Controlador Gestion Usuarios***/
+
+  public function gestion_usuarios(){
+    $usuarios = User::paginate(5);
+    return view('gestion-usuarios', compact('usuarios'));
+  }
+
+  public function crear_usuario(UserRequest $request){
+    $request->validated();
+
+    User::create([
+      'name' => $request['name'],
+      'email' => $request['email'],
+      'password' => bcrypt($request['password']),
+      // 'tipo' => 'Auxiliar'
+    ]);
+
+    return back()->with('mensaje','Se ha creado nueva cuenta correctamente.');
+  }
+
+  public function actualizar_usuario(UserUpdateRequest $request, $id){
+    // $request->validate([
+    //   'name'=>'required',
+    //   'email'=>'required|email|unique:users,email,' . $request->id,
+    //   'password'=>''
+    // ]);
+
+    $request->validated();
+
+    $actualizar = User::find($id);
+    $actualizar->name = $request->name;
+    $actualizar->email = $request->email;
+
+    if (!empty($request->password)) {
+      $validar = $request->validate([
+        'password' => 'string|confirmed|min:8|max:16'
+      ]);
+
+      if ($validar == TRUE) {
+        $newPassword = bcrypt($request->password);
+        $actualizar->password = $newPassword;
+      }
+    }
+
+    $actualizar->save();
+
+    return back()->with('mensaje','Se ha actualizado al usuario: ' . $actualizar->name . ', correctamente.');
+  }
+
+  public function eliminar_usuario($id){
+    $usuario = User::find($id);
+    $eliminar = $usuario->email;
+    $usuario->delete();
+    return back()->with('mensaje','Se ha eliminado al usuario: ' . $eliminar . ', correctamente.');
+  }
+
+
 
 }

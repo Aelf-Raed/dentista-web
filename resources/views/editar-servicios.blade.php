@@ -1,7 +1,19 @@
 @extends('layout-admin')
 
 @section('contenido-admin')
+@php
+use App\Models\User;
+@endphp
 {{-- Sección de Servicios --}}
+
+<!-- Captura de error al crear o editar -->
+@if ($errors->any())
+  <div class="alert alert-danger" role="alert">
+    <i class="far fa-times-circle"></i> Error al Crear o Editar el Servicio.
+  </div>
+@endif
+<!-- Fin Captura de error -->
+
 <div class="card p-3">
     <div class="card-body">
         <h2 class="card-title text-secondary"><i class="fas fa-concierge-bell"></i> Servicios</h2>
@@ -17,11 +29,12 @@
                 <thead class="table-light h6">
                     <tr>
                         <th scope="col" class="fw-bold">#</th>
-                        <th scope="col" class="fw-bold">Servicio</th>
-                        <th scope="col" class="fw-bold">Precio</th>
-                        <th scope="col" class="fw-bold">Oferta</th>
-                        <th scope="col" class="fw-bold">Anterior</th>
-                        <th scope="col" class="fw-bold">Acción</th>
+                        <th scope="col" class="fw-bold">Servicio:</th>
+                        <th scope="col" class="fw-bold">Precio:</th>
+                        <th scope="col" class="fw-bold">Oferta:</th>
+                        <th scope="col" class="fw-bold">Anterior:</th>
+                        <th scope="col" class="fw-bold">Modificado por:</th>
+                        <th scope="col" class="fw-bold">Acciones:</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -65,7 +78,12 @@
                           No Descuento.
                           @endif
                         </td>
-
+                        @php
+                          // $usuario = DB::table('users')->select('name')->where('id', $item->usuario_id)->first();
+                          //En MVC, solo los modelos deben acceder a la informacion, y aqui la clase DB no es un modelo.
+                          $usuario = User::find($item->usuario_id);
+                        @endphp
+                        <td>{{ $usuario->name ?? 'Sin modificar' }}</td>
                         <td>
                             <button type="button" class="btn btn-secondary btn-sm px-3" data-mdb-toggle="modal" data-mdb-target="#editar{{ $item->id }}" title="Editar">
                                 <i class="fas fa-pencil-alt"></i>

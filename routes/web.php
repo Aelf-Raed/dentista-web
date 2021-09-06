@@ -41,3 +41,8 @@ Route::get('editar-servicios',[AdminController::class,'editar_servicios'])->name
 Route::post('editar-servicios',[AdminController::class,'agregar_servicio'])->name('agregar-servicio');
 Route::put('editar-servicios/{id}',[AdminController::class,'editar_servicio'])->name('editar-servicio');
 Route::delete('editar-servicios/{id}',[AdminController::class,'eliminar_servicio'])->name('eliminar-servicio');
+
+Route::get('gestion-usuarios',[AdminController::class,'gestion_usuarios'])->name('gestion-usuarios')->middleware(['auth','admin.auth']);
+Route::post('gestion-usuarios',[AdminController::class,'crear_usuario'])->name('crear-usuario');
+Route::put('gestion-usuarios/{id}',[AdminController::class,'actualizar_usuario'])->name('actualizar-usuario');
+Route::delete('gestion-usuarios/{id}',[AdminController::class,'eliminar_usuario'])->name('eliminar-usuario');
